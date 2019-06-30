@@ -13,7 +13,7 @@ class Usuario(
     var nombreUsuario:String,
     var email:String,
     var contrasenia:String,
-    var rolesDeUsuario:ArrayList<Rol>,
+    var rolesDeUsuario:ArrayList<RolUsuario>,
     var publicacionesDeUsuario:ArrayList<Publicacion>
 
   //  var usuariosDeEmpresa: ArrayList<Usuario>

@@ -1,4 +1,8 @@
 package com.example.inmocasas.dto
 
-class Rol {
+class Rol(
+ var tipoRol:String,
+ var usuariosDeRol:ArrayList<RolUsuario>
+)
+{
 }
