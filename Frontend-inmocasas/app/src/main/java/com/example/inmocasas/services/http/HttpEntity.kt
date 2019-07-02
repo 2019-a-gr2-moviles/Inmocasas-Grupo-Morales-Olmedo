@@ -20,9 +20,7 @@ open class HttpEntity<Entity>(var url:String,var modelo:String ) {
                 }
                 is Result.Success -> {
                     val data = result.get()
-                    Log.i("LA DATA DE LA ","LA DATA DE LA SOLI ES ${data}")
                     returned = data
-                    Log.i("retiunr","RETURN INSIDE IS ${returned}")
                 }
             }
 
