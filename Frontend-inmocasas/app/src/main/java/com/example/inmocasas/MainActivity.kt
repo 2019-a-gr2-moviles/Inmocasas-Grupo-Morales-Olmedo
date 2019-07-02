@@ -1,5 +1,6 @@
 package com.example.inmocasas
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,15 +13,11 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     var url = "http://192.168.56.1:1337/"
-    var userLogeado:Usuario? = null
-    var rolUser:String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_sign_in.setOnClickListener {
             login()
-          //  rolValidate()
         }
 
     }
@@ -37,13 +34,16 @@ class MainActivity : AppCompatActivity() {
         else{
             var usuario:Usuario? = jsonParse(response)
             if (usuario != null){
-                userLogeado = usuario
-                Log.i("User","User: ${usuario.nombre}")
-                rolValidate(userLogeado)
+                currentUser = usuario
+                Log.i("User","User: ${currentUser?.nombre}")
+                rolValidate(currentUser)
+                irAMain(rolUser)
+
 
             }
             else{
                 Log.i("Error Parse","errorP Parseee!!!")
+                Toast.makeText(this, "El usuario ingresado no existe", Toast.LENGTH_SHORT).show()
             }
 
 
@@ -91,12 +91,43 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    fun irAMain(rol:String?){
+        if(rol == "usuario"){
+            irAUsuarioMainActivity()
+        }
+        else if (rol == "administrador"){
+            irAAdministradorMainActivity()
+        }else{
+            Log.i("Error en el rol","error en el rol")
+        }
+    }
+
+    fun irAAdministradorMainActivity(){
+        val intentExplicito = Intent(
+            this,
+            AdministradorMainActivity::class.java
+        )
+
+        startActivity(intentExplicito)
+
+    }
+    fun irAUsuarioMainActivity(){
+        val intentExplicito = Intent(
+            this,
+            UsuarioMainActivity::class.java
+        )
+
+        startActivity(intentExplicito)
+
+    }
 
 
+    companion object {
 
+        var currentUser:Usuario?  = null
+        var rolUser:String? = null
 
-
-
+    }
 
 }
 
