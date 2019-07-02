@@ -11,13 +11,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     var url = "http://192.168.56.1:1337/"
-
+    var userLogeado:Usuario? = null
+    var rolUser:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_sign_in.setOnClickListener {
             login()
+          //  rolValidate()
         }
 
     }
@@ -33,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         else{
             var usuario:Usuario? = jsonParse(response)
             if (usuario != null){
+                userLogeado = usuario
                 Log.i("User","User: ${usuario.nombre}")
+
             }
             else{
                 Log.i("Error Parse","errorP Parseee!!!")
@@ -62,7 +66,24 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    fun rolValidate(){
+        if(userLogeado!=null){
 
+            var rol:Int? = userLogeado?.rolesDeUsuario?.component1()?.fkRol
+            if(rol!=null){
+                when(rol){
+                    1 ->{rolUser = "Administrador"}
+                    2 ->{rolUser = "Usuario"}
+                    else ->{rolUser = null}
+                }
+            }
+            else{
+                Log.i("rol","USUARIO ${userLogeado?.nombre} NO TIENE ROL")
+            }
+
+        }
+
+    }
 
 
 
