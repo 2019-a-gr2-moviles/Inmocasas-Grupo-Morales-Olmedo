@@ -8,6 +8,7 @@ import com.example.inmocasas.dto.RolUsuario
 import com.example.inmocasas.dto.Usuario
 import com.example.inmocasas.services.http.HttpUsuario
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     var url = "http://192.168.56.1:1337/"
@@ -31,12 +32,14 @@ class MainActivity : AppCompatActivity() {
         Log.i("login","El uSER ES ${response}")
         if(response == "[]"){
             Log.i("ERROR","ERRORRRR")
+            Toast.makeText(this, "El usuario ingresado no existe", Toast.LENGTH_SHORT).show()
         }
         else{
             var usuario:Usuario? = jsonParse(response)
             if (usuario != null){
                 userLogeado = usuario
                 Log.i("User","User: ${usuario.nombre}")
+                rolValidate(userLogeado)
 
             }
             else{
@@ -66,19 +69,23 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun rolValidate(){
-        if(userLogeado!=null){
+    fun rolValidate(usuario:Usuario?){
+        if(usuario!=null){
 
-            var rol:Int? = userLogeado?.rolesDeUsuario?.component1()?.fkRol
-            if(rol!=null){
+            Log.i("DENTRO DEL ROL","USUARIO: ${usuario.nombre}")
+
+            if(usuario.rolesDeUsuario.isNotEmpty()){
+              var  rol:Int? = usuario?.rolesDeUsuario?.component1()?.fkRol
                 when(rol){
-                    1 ->{rolUser = "Administrador"}
-                    2 ->{rolUser = "Usuario"}
+                    1 ->{rolUser = "administrador"}
+                    2 ->{rolUser = "usuario"}
                     else ->{rolUser = null}
                 }
+                Log.i("El usuario es ","El usuario es: ${rolUser}")
+
             }
             else{
-                Log.i("rol","USUARIO ${userLogeado?.nombre} NO TIENE ROL")
+                Log.i("ROLES NO ","Usuario sin roles")
             }
 
         }
