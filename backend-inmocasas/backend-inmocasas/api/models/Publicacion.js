@@ -22,9 +22,7 @@ module.exports = {
       isIn: ['pendiente', 'publico']
 
     },
-    fechaPublicacion:{
-    type:'string'
-    },
+  //FECHA DE PUBLICACIón se resuelve con Created At
     fkUsuario:{
       model:'usuario'
     },
