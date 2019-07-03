@@ -28,7 +28,7 @@ module.exports = {
     fkUsuario:{
       model:'usuario'
     },
-    inmueble:{
+    inmueblesDePublicacion:{
         collection: 'inmueble',
         via: 'fkPublicacion'
 
