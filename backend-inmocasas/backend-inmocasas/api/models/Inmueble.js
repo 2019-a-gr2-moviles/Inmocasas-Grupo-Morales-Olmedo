@@ -34,12 +34,12 @@ module.exports = {
     antiguedad:{
       type:'string',
     },
+    ciudad:{
+      type: 'string',
+    },
     fkPublicacion:{
       model:'publicacion',
       unique:true
-    },
-    fkCiudad:{
-      model:'ciudad'
     }
 
   },
