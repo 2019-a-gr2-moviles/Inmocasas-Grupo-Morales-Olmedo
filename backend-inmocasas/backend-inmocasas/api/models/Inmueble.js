@@ -25,7 +25,7 @@ module.exports = {
     numeroHabitaciones:{
       type:'number',
     },
-    numeroBaños:{
+    numeroBanios:{
       type:'number',
     },
     numeroParqueaderos:{
