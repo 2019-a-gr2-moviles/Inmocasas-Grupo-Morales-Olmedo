@@ -41,8 +41,6 @@ module.exports = {
       model:'publicacion',
       unique:true
     }
-
   },
-
 };
 
