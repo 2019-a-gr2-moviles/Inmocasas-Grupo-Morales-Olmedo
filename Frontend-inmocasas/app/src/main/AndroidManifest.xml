@@ -13,7 +13,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".UsuarioMainActivity">
+        <activity android:name=".NavegacionUsuario.PublicarActivity">
+        </activity>
+        <activity android:name=".NavegacionUsuario.InmuebleActivity">
+        </activity>
+        <activity android:name=".NavegacionUsuario.PublicacionesActivity">
+        </activity>
+        <activity android:name=".NavegacionUsuario.UsuarioMainActivity">
         </activity>
         <activity android:name=".AdministradorMainActivity">
         </activity>

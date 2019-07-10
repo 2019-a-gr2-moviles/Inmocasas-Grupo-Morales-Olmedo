@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.beust.klaxon.Klaxon
-import com.example.inmocasas.dto.RolUsuario
 import com.example.inmocasas.dto.Usuario
 import com.example.inmocasas.services.http.HttpUsuario
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
+import com.example.inmocasas.NavegacionUsuario.UsuarioMainActivity
 
 class MainActivity : AppCompatActivity() {
     var url = "http://192.168.56.1:1337/"
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             else{
-                Log.i("Error Parse","errorP Parseee!!!")
+                Log.i("Error Parse","errorP Parseee del Logiiin!!!")
                 Toast.makeText(this, "El usuario ingresado no existe", Toast.LENGTH_SHORT).show()
             }
 

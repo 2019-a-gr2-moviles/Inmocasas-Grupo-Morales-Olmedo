@@ -15,8 +15,6 @@ class Usuario(
     var contrasenia:String,
     var rolesDeUsuario:ArrayList<RolUsuario>,
     var publicacionesDeUsuario:ArrayList<Publicacion>
-
-  //  var usuariosDeEmpresa: ArrayList<Usuario>
 ) {
     var fechaCreacion: Date
     var fechaActualizacion: Date
