@@ -35,7 +35,7 @@ module.exports = {
       type:'string',
     },
     ciudad:{
-      type: 'strinrg'
+      type: 'string'
     },
     fkPublicacion:{
       model:'publicacion',
