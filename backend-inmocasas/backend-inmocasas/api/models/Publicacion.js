@@ -25,6 +25,12 @@ module.exports = {
     descripcion:{
       type:'string'
   },
+    latitud:{
+    type: 'number'
+    },
+    longitud:{
+    tyoe: 'number'
+    },
   //FECHA DE PUBLICACIón se resuelve con Created At
     fkUsuario:{
       model:'usuario'
