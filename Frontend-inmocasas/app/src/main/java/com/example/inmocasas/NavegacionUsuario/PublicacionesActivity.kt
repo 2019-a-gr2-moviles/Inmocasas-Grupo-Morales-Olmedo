@@ -1,11 +1,11 @@
 package com.example.inmocasas.NavegacionUsuario
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
 import com.beust.klaxon.Klaxon
@@ -65,7 +65,7 @@ class PublicacionesActivity : AppCompatActivity() {
     fun iniciarRecylerView(
         lista: List<Publicacion>,
         actividad: PublicacionesActivity,
-        recycler_view: RecyclerView
+        recycler_view: androidx.recyclerview.widget.RecyclerView
     ) {
         val adaptadorPublicacion = AdaptadorPublicacion(
             lista,
@@ -73,8 +73,8 @@ class PublicacionesActivity : AppCompatActivity() {
             recycler_view
         )
         recycler_view.adapter = adaptadorPublicacion
-        recycler_view.itemAnimator = DefaultItemAnimator()
-        recycler_view.layoutManager = LinearLayoutManager(actividad)
+        recycler_view.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorPublicacion.notifyDataSetChanged()
     }

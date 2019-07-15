@@ -9,7 +9,7 @@ class Publicacion(
     var createdAt: Long,
     var updatedAt: Long,
     var titulo: String,
-    var precio:Int,
+    var precio:Double,
     var estado:String,
     var descripcion:String,
     var fkUsuario:Int,

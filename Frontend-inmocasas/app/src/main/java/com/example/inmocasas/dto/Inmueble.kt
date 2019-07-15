@@ -13,6 +13,8 @@ class Inmueble (
     var numeroParqueaderos:Int = 0,
     var antiguedad: String = "",
     var ciudad: String = "",
+    var latitud:Double = 0.0,
+    var longitud:Double = 0.0,
     var fkPublicacion: Int = 0
 ){
 

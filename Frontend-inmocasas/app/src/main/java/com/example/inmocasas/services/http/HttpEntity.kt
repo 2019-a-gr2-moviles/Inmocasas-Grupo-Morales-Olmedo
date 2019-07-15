@@ -3,8 +3,10 @@ package com.example.inmocasas.services.http
 
 import android.util.Log
 import com.beust.klaxon.Klaxon
+import com.github.kittinunf.fuel.core.Parameters
 
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
 import java.util.*
 
@@ -69,5 +71,26 @@ open class HttpEntity<Entity>(var url:String,var modelo:String ) {
         Thread.sleep(1500)
         Log.i("RETORNADOOOOOO","EEEEES RETORNADOOO despues de 2 segundo ses :${returned}")
         return returned
+    }
+
+
+
+
+    fun post(parametros: Parameters){
+        var url = "${this.url}${this.modelo}";
+        url.httpPost(parametros).responseString { request,response,result->
+            when (result) {
+                is Result.Failure -> {
+                    val ex = result.getException()
+                }
+                is Result.Success -> {
+                    val data = result.get()
+                    Log.i("LA DATA DE LA ","Respuesta de pOSt es ${data}")
+
+                }
+            }
+
+    }
+
     }
 }

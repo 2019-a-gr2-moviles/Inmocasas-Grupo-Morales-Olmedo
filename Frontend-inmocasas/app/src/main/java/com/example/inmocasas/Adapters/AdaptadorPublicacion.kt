@@ -1,6 +1,6 @@
 package com.example.inmocasas.Adapters
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +13,10 @@ import com.example.inmocasas.dto.Publicacion
 
 class AdaptadorPublicacion(private val listaPublicaciones:List<Publicacion>,
                            private val contexto: PublicacionesActivity,
-                           private val recyclerview: RecyclerView
-): RecyclerView.Adapter<AdaptadorPublicacion.MyViewHolder>() {
+                           private val recyclerview: androidx.recyclerview.widget.RecyclerView
+): androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorPublicacion.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
 
         var imagen_publicacion: ImageView
         var txt_titulo: TextView

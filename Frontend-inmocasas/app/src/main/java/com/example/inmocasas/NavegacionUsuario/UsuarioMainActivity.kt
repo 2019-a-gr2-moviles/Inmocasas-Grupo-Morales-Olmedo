@@ -1,7 +1,7 @@
 package com.example.inmocasas.NavegacionUsuario
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.inmocasas.R
 import kotlinx.android.synthetic.main.activity_usuario_main.*
