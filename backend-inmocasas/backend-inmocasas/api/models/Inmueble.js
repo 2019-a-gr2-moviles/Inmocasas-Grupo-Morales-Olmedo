@@ -37,6 +37,12 @@ module.exports = {
     ciudad:{
       type: 'string'
     },
+     latitud:{
+    type: 'number'
+    },
+    longitud:{
+    tyoe: 'number'
+    },
     fkPublicacion:{
       model:'publicacion',
       unique:true
