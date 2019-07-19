@@ -41,7 +41,7 @@ module.exports = {
     type: 'number'
     },
     longitud:{
-    tyoe: 'number'
+    type: 'number'
     },
     fkPublicacion:{
       model:'publicacion',

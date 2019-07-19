@@ -25,13 +25,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:onClick="searchLocation"
-                android:text="Buscar" />
+                android:text="Buscar"
+                android:background="@drawable/round" android:textColor="@android:color/white"/>
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_hecho"
                 android:layout_weight="0.5"
-                android:text="Hecho" />
+                android:text="Hecho"
+                android:background="@drawable/round" android:textColor="@android:color/white"/>
 
     </LinearLayout>
 </fragment>

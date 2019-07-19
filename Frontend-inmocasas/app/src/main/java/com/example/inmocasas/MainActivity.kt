@@ -10,9 +10,14 @@ import com.example.inmocasas.services.http.HttpUsuario
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
 import com.example.inmocasas.NavegacionUsuario.UsuarioMainActivity
+import com.example.inmocasas.services.http.GlobalsVariables
+import com.example.inmocasas.services.http.HttpPublicacion
 
 class MainActivity : AppCompatActivity() {
-    var url = "http://192.168.56.1:1337/"
+  //  var url = "http://172.29.64.192:1337/"
+    var globals = GlobalsVariables
+    var url = globals.url
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -121,6 +126,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intentExplicito)
 
     }
+
 
 
     companion object {

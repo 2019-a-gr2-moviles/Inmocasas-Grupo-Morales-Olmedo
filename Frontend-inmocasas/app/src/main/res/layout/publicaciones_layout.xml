@@ -5,35 +5,41 @@
                 android:layout_height="wrap_content"
                  android:id="@+id/publicaciones_layout">
     <ImageView
-            android:layout_width="245dp"
-            android:layout_height="207dp" tools:srcCompat="@tools:sample/avatars[0]"
-            android:id="@+id/img_publicacion" android:layout_marginTop="18dp" android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" android:layout_marginLeft="59dp" android:layout_marginStart="59dp"
+            android:layout_width="match_parent"
+            android:layout_height="206dp" tools:srcCompat="@tools:sample/avatars[0]"
+            android:id="@+id/img_publicacion" android:layout_marginTop="5dp" android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" android:layout_marginLeft="-7dp" android:layout_marginStart="-7dp"
             android:layout_alignParentLeft="true" app:srcCompat="@drawable/c1" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="56dp" android:layout_marginEnd="56dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="7dp" android:layout_marginEnd="7dp"/>
     <TextView
             android:text="TextView"
-            android:layout_width="173dp"
-            android:layout_height="31dp" android:id="@+id/txt_titulo"
-            android:layout_marginTop="41dp"
+            android:layout_width="264dp"
+            android:layout_height="wrap_content" android:id="@+id/txt_titulo"
+            android:layout_marginTop="21dp"
             android:layout_below="@+id/img_publicacion" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="154dp" android:layout_marginEnd="154dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="69dp" android:layout_marginEnd="69dp"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"/>
     <TextView
             android:text="TextView"
             android:layout_width="290dp"
             android:layout_height="92dp" android:id="@+id/txt_descripcion" android:layout_marginTop="21dp"
             android:layout_below="@+id/txt_fecha" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="37dp" android:layout_marginEnd="37dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="37dp" android:layout_marginEnd="37dp"
+            android:textColor="@android:color/white"/>
     <TextView
             android:text="TextView"
             android:layout_width="252dp"
             android:layout_height="38dp" android:id="@+id/txt_fecha" android:layout_marginTop="17dp"
             android:layout_below="@+id/txt_titulo" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="74dp" android:layout_marginEnd="74dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="74dp" android:layout_marginEnd="74dp"
+            android:textColor="@android:color/white"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/txt_precio" android:layout_marginTop="46dp"
             android:layout_below="@+id/img_publicacion" android:layout_alignParentStart="true"
-            android:layout_marginLeft="259dp" android:layout_marginStart="259dp" android:layout_alignParentLeft="true"/>
+            android:layout_marginLeft="259dp" android:layout_marginStart="259dp" android:layout_alignParentLeft="true"
+            android:textColor="@android:color/white"/>
+
 </RelativeLayout>

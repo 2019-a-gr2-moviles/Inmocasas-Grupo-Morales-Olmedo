@@ -13,6 +13,7 @@ import com.example.inmocasas.MapsActivity
 import com.example.inmocasas.R
 import com.example.inmocasas.dto.LastPublicated
 import com.example.inmocasas.dto.Publicacion
+import com.example.inmocasas.services.http.GlobalsVariables
 import com.example.inmocasas.services.http.HttpInmueble
 
 import com.example.inmocasas.services.http.HttpPublicacion
@@ -20,7 +21,9 @@ import kotlinx.android.synthetic.main.activity_publicar.*
 import java.security.Policy
 
 class PublicarActivity : AppCompatActivity() {
-    var url = "http://192.168.56.1:1337/"
+    // url = "http://172.29.64.192:1337/"
+    var globals = GlobalsVariables
+    var url = globals.url
     var publicacionesPublicas:List<LastPublicated>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

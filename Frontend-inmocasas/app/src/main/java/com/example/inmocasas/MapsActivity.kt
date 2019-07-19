@@ -153,17 +153,24 @@ class MapsActivity(): AppCompatActivity(), OnMapReadyCallback, LocationListener,
                 addressList = geoCoder.getFromLocationName(location, 1)
 
             } catch (e: IOException) {
-                e.printStackTrace()
+               // e.printStackTrace()
+                Toast.makeText(applicationContext, "NO SE ENCONTRO LA UBICACIÓN", Toast.LENGTH_LONG).show()
+            }
+            if(addressList != null){
+                val address = addressList!![0]
+                val latLng = LatLng(address.latitude, address.longitude)
+                mMap!!.addMarker(MarkerOptions().position(latLng).title(location))
+                mMap!!.animateCamera(CameraUpdateFactory.newLatLng(latLng))
+                Toast.makeText(applicationContext, address.latitude.toString() + " " + address.longitude, Toast.LENGTH_LONG).show()
+                this.latitudSeleccionada = address.latitude
+                this.longitudSeleccionada = address.longitude
+            }
+            else{
+                Toast.makeText(applicationContext, "NO SE ENCONTRO LA UBICACIÓN", Toast.LENGTH_LONG).show()
+
             }
 
-            val address = addressList!![0]
-            val latLng = LatLng(address.latitude, address.longitude)
-            mMap!!.addMarker(MarkerOptions().position(latLng).title(location))
-            mMap!!.animateCamera(CameraUpdateFactory.newLatLng(latLng))
-            Toast.makeText(applicationContext, address.latitude.toString() + " " + address.longitude, Toast.LENGTH_LONG).show()
 
-            this.latitudSeleccionada = address.latitude
-            this.longitudSeleccionada = address.longitude
 
         }
     }

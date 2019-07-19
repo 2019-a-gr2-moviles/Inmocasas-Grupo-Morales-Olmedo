@@ -18,6 +18,30 @@ btn_publicaiones.setOnClickListener {
         btn_publicar.setOnClickListener {
             irAPublicarActivity()
         }
+        btn_buscar.setOnClickListener {
+            irAVozActivity()
+        }
+        btn_eliminar.setOnClickListener {
+            irAEliminarActivity()
+        }
+
+    }
+    fun irAEliminarActivity(){
+        val intentExplicito = Intent(
+            this,
+            EliminarPublicacionActivity::class.java
+        )
+
+        startActivity(intentExplicito)
+    }
+    fun irAVozActivity(){
+        val intentExplicito = Intent(
+            this,
+            VozActivity::class.java
+        )
+
+        startActivity(intentExplicito)
+
     }
     fun irAPublicacionesActivity(){
 

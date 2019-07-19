@@ -8,11 +8,14 @@ import com.beust.klaxon.Klaxon
 import com.example.inmocasas.R
 import com.example.inmocasas.dto.Inmueble
 import com.example.inmocasas.dto.Publicacion
+import com.example.inmocasas.services.http.GlobalsVariables
 import com.example.inmocasas.services.http.HttpPublicacion
 import kotlinx.android.synthetic.main.activity_inmueble.*
 
 class InmuebleActivity : AppCompatActivity() {
-    var url = "http://192.168.56.1:1337/"
+    //var url = "http://172.29.64.192:1337/"
+    var globals = GlobalsVariables
+    var url = globals.url
     var publicacion:Publicacion? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
